@@ -10,13 +10,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_06_WebBrowser_WebElement_Commands {
+public class Topic_06_WebBrowser_Commands {
 	WebDriver driver;
 
 	@Test
-	/*
-	 * Browser: verify Url (getCurrentUrl)
-	 */
 	public void TC_01_Url() {
 		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
 		Assert.assertEquals(driver.getCurrentUrl(),"http://live.demoguru99.com/index.php/customer/account/login/");
@@ -25,9 +22,6 @@ public class Topic_06_WebBrowser_WebElement_Commands {
 	}
 	
 	@Test
-	/*
-	 * Browser: verify Title (getTitle)
-	 */
 	public void TC_02_Title() {
 		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
 		Assert.assertEquals(driver.getTitle(),"Customer Login");
@@ -36,9 +30,6 @@ public class Topic_06_WebBrowser_WebElement_Commands {
 	}
 	
 	@Test
-	/*
-	 * Browser: navigate function (back/forward)
-	 */
 	public void TC_03_Navigate() {
 		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
 		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();

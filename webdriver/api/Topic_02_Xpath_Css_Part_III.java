@@ -72,13 +72,6 @@ public class Topic_02_Xpath_Css_Part_III {
 					"Invalid login or password.");
 	}
 
-//	@Test
-//	public void TC_05_Create_New_Acc() {
-//		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
-//		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
-//
-//	}
-
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
