@@ -12,7 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_13_Handle_Textbox_TextArea_DropdownList {
+public class Topic_14_Handle_Dropdown {
 	WebDriver driver;
 	String email, userID, password, loginPageUrl, customerId;
 	String name, dobInput, dobOuput, address, city, state, pin, telephone;
