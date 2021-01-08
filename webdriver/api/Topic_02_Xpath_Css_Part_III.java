@@ -16,7 +16,7 @@ public class Topic_02_Xpath_Css_Part_III {
 	By emailBy = By.id("email");
 	By passwordBy = By.name("login[password]");
 	By loginBtnBy = By.xpath("//button[@title='Login']");
-	
+
 	@BeforeClass
 	public void beforeClass() {
 		driver = new FirefoxDriver();
@@ -67,9 +67,9 @@ public class Topic_02_Xpath_Css_Part_III {
 		driver.findElement(emailBy).sendKeys("automation@gmail.com");
 		driver.findElement(passwordBy).sendKeys("123123123");
 		driver.findElement(loginBtnBy).click();
-		
-			Assert.assertEquals(driver.findElement(By.xpath("//li[@class='error-msg']//span")).getText(),
-					"Invalid login or password.");
+
+		Assert.assertEquals(driver.findElement(By.xpath("//li[@class='error-msg']//span")).getText(),
+				"Invalid login or password.");
 	}
 
 	@AfterClass

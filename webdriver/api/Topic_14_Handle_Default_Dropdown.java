@@ -52,7 +52,7 @@ public class Topic_14_Handle_Default_Dropdown {
 		year = "1985";
 	}
 
-	//@Test
+	// @Test
 	public void TC_01_New_Customer() {
 		driver.get("https://demo.nopcommerce.com/register");
 		driver.findElement(By.className("ico-register")).click();
@@ -103,21 +103,21 @@ public class Topic_14_Handle_Default_Dropdown {
 	@Test
 	public void TC_02_Multiple_Dropdown() {
 		driver.get("https://automationfc.github.io/basic-form/");
-		select= new Select(driver.findElement(By.name("user_job2")));
+		select = new Select(driver.findElement(By.name("user_job2")));
 		select.selectByVisibleText("Mobile");
 		select.selectByVisibleText("Desktop");
 		select.selectByVisibleText("Security");
-		
-		List<String> itemText= new ArrayList<String>();
+
+		List<String> itemText = new ArrayList<String>();
 		itemText.add("Mobile");
 		itemText.add("Desktop");
 		itemText.add("Security");
 
-		List<WebElement> itemSelected= select.getAllSelectedOptions();
-		
-		List<String> itemSelectedText= new ArrayList<String>();
-		
-		//verify 4 items selected
+		List<WebElement> itemSelected = select.getAllSelectedOptions();
+
+		List<String> itemSelectedText = new ArrayList<String>();
+
+		// verify 4 items selected
 		Assert.assertEquals(itemSelected.size(), 3);
 //		for (int j = 0; j < itemSelected.size(); j++) {
 //			Assert.assertTrue(itemSelected.get(j).isSelected());
@@ -127,17 +127,12 @@ public class Topic_14_Handle_Default_Dropdown {
 			itemSelectedText.add(item.getText());
 			System.out.println(item.getText());
 		}
-		
+
 		Assert.assertTrue(itemSelectedText.contains("Mobile"));
 		Assert.assertTrue(itemSelectedText.contains("Desktop"));
 		Assert.assertTrue(itemSelectedText.contains("Security"));
-		
+
 		Assert.assertEquals(itemText, itemSelectedText);
-	}
-
-	@Test
-	public void TC_03_Edit_Customer() {
-
 	}
 
 	@AfterClass

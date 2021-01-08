@@ -16,46 +16,43 @@ public class Topic_06_WebBrowser_Commands {
 	@Test
 	public void TC_01_Url() {
 		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
-		Assert.assertEquals(driver.getCurrentUrl(),"http://live.demoguru99.com/index.php/customer/account/login/");
-	    driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
-	    Assert.assertEquals(driver.getCurrentUrl(),"http://live.demoguru99.com/index.php/customer/account/create/");
+		Assert.assertEquals(driver.getCurrentUrl(), "http://live.demoguru99.com/index.php/customer/account/login/");
+		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
+		Assert.assertEquals(driver.getCurrentUrl(), "http://live.demoguru99.com/index.php/customer/account/create/");
 	}
-	
+
 	@Test
 	public void TC_02_Title() {
 		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
-		Assert.assertEquals(driver.getTitle(),"Customer Login");
-	    driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
-	    Assert.assertEquals(driver.getTitle(),"Create New Customer Account");
+		Assert.assertEquals(driver.getTitle(), "Customer Login");
+		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
+		Assert.assertEquals(driver.getTitle(), "Create New Customer Account");
 	}
-	
+
 	@Test
 	public void TC_03_Navigate() {
 		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
 		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
-		Assert.assertEquals(driver.getCurrentUrl(),
-				"http://live.demoguru99.com/index.php/customer/account/create/");
-		
+		Assert.assertEquals(driver.getCurrentUrl(), "http://live.demoguru99.com/index.php/customer/account/create/");
+
 		driver.navigate().back();
-		Assert.assertEquals(driver.getCurrentUrl(),
-				"http://live.demoguru99.com/index.php/customer/account/login/");
-	
+		Assert.assertEquals(driver.getCurrentUrl(), "http://live.demoguru99.com/index.php/customer/account/login/");
+
 		driver.navigate().forward();
-		Assert.assertEquals(driver.getTitle(),"Create New Customer Account");
-		
-		
+		Assert.assertEquals(driver.getTitle(), "Create New Customer Account");
+
 	}
+
 	@Test
 	public void TC_04_PageSource() {
 		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
 		String loginPageSource = driver.getPageSource();
 		Assert.assertTrue(loginPageSource.contains("Login or Create an Account"));
-		
+
 		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
 		String registerPageSource = driver.getPageSource();
 		Assert.assertTrue(registerPageSource.contains("Create an Account"));
 	}
-
 
 	@BeforeClass
 	public void beforeClass() {

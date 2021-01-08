@@ -36,12 +36,12 @@ public class Topic_01_Check_environment {
 	public void TC_04_Check() {
 		Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());
 	}
-	
+
 	@Test
 	public void TC_05_Check() {
 		Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());
 	}
-	
+
 	@Test
 	public void TC_06_Check() {
 		Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());

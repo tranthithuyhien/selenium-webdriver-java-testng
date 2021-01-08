@@ -69,7 +69,6 @@ public class Topic_13_Handle_Textbox_TextArea {
 				"Welcome To Manager's Page of Guru99 Bank");
 	}
 
-
 	@Test
 	public void TC_01_New_Customer() {
 		driver.findElement(By.xpath("//a[text()='New Customer']")).click();
@@ -109,7 +108,7 @@ public class Topic_13_Handle_Textbox_TextArea {
 	}
 
 	@Test
-	public void TC_02_Edit_Customer(){
+	public void TC_02_Edit_Customer() {
 		driver.findElement(By.xpath("//a[text()='Edit Customer']")).click();
 		driver.findElement(By.name("cusid")).sendKeys(customerId);
 		driver.findElement(By.name("AccSubmit")).click();
