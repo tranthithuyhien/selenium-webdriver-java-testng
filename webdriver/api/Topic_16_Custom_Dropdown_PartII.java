@@ -85,7 +85,7 @@ public class Topic_16_Custom_Dropdown_PartII {
 
 		List<WebElement> allItems = driver.findElements(By.xpath(allItemXpath));
 
-		// Duyệt qa hết tất cả các phần tử cho đến khi thỏa mãn điều kiện
+		// Duyệt qua hết tất cả các phần tử cho đến khi thỏa mãn điều kiện
 		for (WebElement childElement : allItems) {
 
 			// "January", "April", "July"
@@ -208,7 +208,7 @@ public class Topic_16_Custom_Dropdown_PartII {
 		Assert.assertEquals(driver.findElement(By.xpath("//div[@class='btn-group']")).getText(),"Third Option") ;
 	}
 
-	@Test 
+	//@Test 
 	public void TC_05_Editable() {
 		driver.get("https://react.semantic-ui.com/maximize/dropdown-example-search-selection/");
 		
