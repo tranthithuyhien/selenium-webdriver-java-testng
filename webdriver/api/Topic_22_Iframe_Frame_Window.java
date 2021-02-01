@@ -34,12 +34,21 @@ public class Topic_22_Iframe_Frame_Window {
 		//switch vao iframe cua facebook
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[contains(@title, 'fb:page Facebook Social Plugin')]")));
 		Assert.assertEquals(driver.findElement(By.xpath("//a[@title='Automation FC']")).getText(), "Automation FC");
-		Assert.assertEquals(driver.findElement(By.xpath("//a[@title='Automation FC']/parent::div//following-sibling::div")).getText(), "2,108 likes");
+		Assert.assertEquals(driver.findElement(By.xpath("//a[@title='Automation FC']/parent::div//following-sibling::div")).getText(), "2,114 likes");
 		String likeText = driver.findElement(By.xpath("//a[@title='Automation FC']/parent::div//following-sibling::div")).getText();
 		
 		int likeNumber = Integer.parseInt(likeText.split(" ")[0].replace(",", ""));
 		System.out.println(likeNumber);
 		assertThat(likeNumber, greaterThan(1900));
+		
+		//switch to top window (inluding all iframe)
+		driver.switchTo().defaultContent();
+		
+		Assert.assertEquals(driver.findElement(By.xpath("//a[@title='Automation FC Blog — ']")).getText(), "AUTOMATION FC BLOG");
+		
+		//switch to youtube iframe
+		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@title='YouTube video player']")));
+		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='movie_player']")).isDisplayed());
 	}
 
 	//@Test
